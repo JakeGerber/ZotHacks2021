@@ -1,6 +1,8 @@
-const Answers = () => {
+const Answers = (props) => {
     
-    return (  );
+    return ( 
+        <button>{props.answer}</button>
+     );
 }
  
 export default Answers;
