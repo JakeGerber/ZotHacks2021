@@ -43,7 +43,7 @@ class App extends Component {
 
     if (this.state.items.length === 0)
     {return null}
-    const {name, artist, image} = this.state.items[0]
+    const {name, artist, image} = this.state.items[4]
     const artistname = artist.name
     const imageURL = image[2]["#text"]
 
