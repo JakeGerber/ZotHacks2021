@@ -24,8 +24,8 @@ class App extends Component {
 
   render() {
 
-
     return (
+      <Results />
       <div className = "Credits">Credits: ZotHacks 2021 Team 11</div>
     );
   }
