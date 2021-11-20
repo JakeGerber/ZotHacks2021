@@ -7,9 +7,13 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <div>
-      "This is a test"
+    <div className = "gametitle">
+      App Name
     </div>
+    <div className="buttonbox">
+    <button className="gamestart">START</button>
+    </div>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );

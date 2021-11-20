@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 class App extends Component {
 
@@ -24,12 +25,7 @@ class App extends Component {
 
 
     return (
-      <div classname = "App">
-        Data has been loaded!
-        {this.state.items.cell}
-        Here^^
-
-      </div>
+      <div className = "Credits">Credits: ZotHacks 2021 Team 11</div>
     );
   }
 }
