@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Results from './results/Results.js';
 
 class App extends Component {
 
@@ -25,10 +26,7 @@ class App extends Component {
 
     return (
       <div classname = "App">
-        Data has been loaded!
-        {this.state.items.cell}
-        Here^^
-
+        <Results />
       </div>
     );
   }
