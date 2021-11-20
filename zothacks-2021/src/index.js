@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Question_Page from './Questions/Question-Page';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Question_Page />
     <div>
       "This is a test"
     </div>
