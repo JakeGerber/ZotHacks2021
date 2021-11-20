@@ -40,12 +40,12 @@ const Question_Page = () => {
 
     return ( 
         <div className="QuestionPage">
-            <p>{question}</p>
+            <p id='Prompt'>{question}</p>
             <div>
-                <button onClick={rerollq}>{button1}</button>
-                <button onClick={rerollq}>{button2}</button>
-                <button onClick={rerollq}>{button3}</button>
-                <button onClick={rerollq}>{button4}</button>
+                <button id='button 1' onClick={rerollq}>{button1}</button>
+                <button id='button 2' onClick={rerollq}>{button2}</button>
+                <button id='button 3' onClick={rerollq}>{button3}</button>
+                <button id='button 4' onClick={rerollq}>{button4}</button>
             </div>
         </div>
      );
