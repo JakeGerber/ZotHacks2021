@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Results from './Results.js';
+import './App.css';
 
 class App extends Component {
 
@@ -41,6 +43,7 @@ class App extends Component {
 //look into destructing the values
   render() {
 
+
     if (this.state.items.length === 0)
     {return null}
     const {name, artist, image} = this.state.items[4]
@@ -58,6 +61,10 @@ class App extends Component {
         {JSON.stringify(this.state.items[0], null, 4)}
 
       </div>
+
+      <Results />
+      <div className = "Credits">Credits: ZotHacks 2021 Team 11</div>
+
     );
   }
 }

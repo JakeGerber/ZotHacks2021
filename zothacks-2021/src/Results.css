@@ -1,0 +1,32 @@
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, Roboto, 'Courier New', monospace;
+}
+
+.result{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: justify;
+
+    color: #000000;
+}
+
+.resultsTitle{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 84px;
+
+    color: #000000;
+}
+
+.resultsColumn{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+}
