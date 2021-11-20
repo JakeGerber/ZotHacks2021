@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Question_single_test from './Questions/Question_single_test';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <div className = "gametitle">
       App Name
-    </div>
+
+    <Question_single_test />
     <div className="buttonbox">
     <button className="gamestart">START</button>
     </div>
