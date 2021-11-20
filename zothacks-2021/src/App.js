@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Results from './results/Results.js';
+import React, { Component, useState } from 'react';
+import Results from './Results.js';
 
 class App extends Component {
 
@@ -23,10 +23,9 @@ class App extends Component {
 
   render() {
 
-
     return (
       <div classname = "App">
-        <Results />
+        <Results/>
       </div>
     );
   }
