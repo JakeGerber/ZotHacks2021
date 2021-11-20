@@ -1,0 +1,12 @@
+.resultsInfoRow {
+    display: flex;
+}
+
+.resultsInfoColumn {
+    flex: 50%;
+}
+
+.resultsAlbumCover {
+    max-height: 100%;
+    max-width: 100%;
+}
