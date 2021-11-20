@@ -11,6 +11,7 @@ const Question_Page = () => {
     const [button2, cbut2] = useState(answers[1]);
     const [button3, cbut3] = useState(answers[2]);
     const [button4, cbut4] = useState(answers[3]);
+    
 
     const reroll_answers = () => {
         const answer1 = Math.floor(Math.random()*answers.length);
@@ -32,6 +33,10 @@ const Question_Page = () => {
 
     const rerollq = () => {
         changeq(Questions[Math.floor(Math.random()*Questions.length)])
+    }
+
+    const count_check = () => {
+
     }
     
     useEffect(() => {
