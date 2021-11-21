@@ -8,13 +8,6 @@ import Question_single_test from './Questions/Question_single_test';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <div className = "gametitle">
-      App Name
-
-    <Question_single_test />
-    <div className="buttonbox">
-    <button className="gamestart">START</button>
-    </div>
     
   </React.StrictMode>,
   document.getElementById('root')

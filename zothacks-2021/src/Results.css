@@ -17,16 +17,52 @@ code {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 72px;
-    line-height: 84px;
-
-    color: #000000;
+    font-size: 45px;
+    line-height: auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    color: #FFFFFF;
 }
 
-.resultsColumn{
+.resultsInfoRow{
+    display: flex;
+}
+
+.resultsInfoColumn{
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
-    line-height: 42px;
+    font-size: 24px;
+    padding: 3px 3px;
+    line-height: auto;
+    text-align: center;
+    flex: 50%;
+    color: #FFFFFF;
 }
+
+.resultsAlbumCover{
+    max-height: 50%;
+    max-width: 50%;
+
+    border: 2px solid #FFFFFF;
+}
+
+.restart{
+    text-align: center;
+  background-color: #8561CA;
+  color: white;
+  font-family: Monaco;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 66px;
+  padding: 10px 30px;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.restart:hover {
+    background-color: #AA69FC;
+    color: black;
+  }

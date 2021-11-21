@@ -19,7 +19,7 @@ code {
   line-height: 225px;
   text-align: center;
 
-  color: #000000;
+  color: #DDDDDD;
 
 }
 
@@ -38,6 +38,7 @@ code {
   padding: 20px 50px;
   border: 2px solid #000000;
   border-radius: 20px;
+  text-decoration: none;
 }
 
 .gamestart:hover {
