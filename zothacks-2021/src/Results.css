@@ -17,17 +17,16 @@ code {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 45px;
     line-height: auto;
     align-items: center;
     display: flex;
-    color: #000000;
-    padding: 10px 10px;
+    justify-content: space-evenly;
+    color: #FFFFFF;
 }
 
 .resultsInfoRow{
     display: flex;
-    padding: 10px 10px;
 }
 
 .resultsInfoColumn{
@@ -35,11 +34,11 @@ code {
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
-    padding: 10px 10px;
+    padding: 3px 3px;
     line-height: auto;
     text-align: center;
     flex: 50%;
-
+    color: #FFFFFF;
 }
 
 .resultsAlbumCover{
@@ -60,6 +59,7 @@ code {
   padding: 10px 30px;
   border: 2px solid #000000;
   border-radius: 20px;
+  text-decoration: none;
 }
 
 .restart:hover {

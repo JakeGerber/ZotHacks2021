@@ -31,16 +31,12 @@ const Results = (props) => {
       songName2: "Song 2"
     });
 
-    const startAgain = () => {
-        
-    }
-
     // JSX object
     return (
         <nav class="results">
             <div className="resultsTitle">
                 <h1>You got <strong>{ finalScores.mainScore }/10.</strong> Congratulations!</h1>
-                <button onClick={ startAgain }>PLAY AGAIN</button>
+                <a href="/question" className="restart">PLAY AGAIN</a>
             </div>
             <div className="resultsInfoRow">
                 <div className="resultsInfoColumn">
