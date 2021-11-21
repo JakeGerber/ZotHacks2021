@@ -1,6 +1,10 @@
 import Answers from './Answers';
 import Question from './Question';
 import {useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import { Redirect } from 'react-router';
+
 
 const Questions = ['What year did this song come out?', 'Who wrote this song?', 'Which album is this song from?'];
 
@@ -17,6 +21,8 @@ const Question_Page = () => {
     const [hiphop, setHiphop] = useState([])
 
     const [stopthis, makingitstop] = useState(false)
+
+    let history = useHistory()
     
 
 
@@ -33,8 +39,18 @@ const Question_Page = () => {
     const [rockPoints, setRockPoints] = useState(0);
     const [countryPoints, setCountryPoints] = useState(0);
     const [hiphopPoints, setHiphopPoints] = useState(0);
+
+    const [pPoints, sPopPoints] = useState(0);
+    const [rPoints, sRockPoints] = useState(0);
+    const [cPoints, sCountryPoints] = useState(0);
+    const [hPoints, sHiphopPoints] = useState(0);
+
+
     const [currentValueButton, setButtonVal] = useState(0);
     const [totalQuestionsAsked, updateQuestionsNum] = useState(0);
+    const [tRightQuestions, uright] = useState(0);
+
+    const [currentGen, genUpdate] = useState([])
 
     const [crec, crecUpdate] = useState(0);
     
@@ -55,7 +71,7 @@ const Question_Page = () => {
         const items = await fetch(url)
         .then(res => res.json())
         .then(json => {
-          console.log(json.albums.album)
+          //console.log(json.albums.album)
           return json.albums.album
         })
 
@@ -79,10 +95,53 @@ const Question_Page = () => {
       
     const checkAns = (buttonNum) => {
 
+        updateQuestionsNum(previous => previous+1)
+
         if (currentValueButton === buttonNum)
         {
+            uright(prev6 => prev6+1)
+            console.log("HAHHAHHAHAHHAHAHAHHAHA")
+            console.log(currentGen[0])
+            console.log(pop[0])
+            console.log(rock[0])
+            console.log(hiphop[0])
+            console.log(country[0])
             crecUpdate(prev => prev+1)
+            if (currentGen[0].name === pop[0].name)
+            {
+                setPopPoints(prev1 => prev1+1)
+                console.log("Got a pop point")
+                sPopPoints(previ1 => previ1+1)
+            }
+            else if (currentGen[0].name === rock[0].name)
+            {
+                setRockPoints(prev2 => prev2+1)
+                console.log("Got a rock point")
+                sRockPoints(previ2 => previ2+1)
+            }
+            else if (currentGen[0].name === hiphop[0].name)
+            {
+                setHiphopPoints(prev3 => prev3+1)
+                console.log("Got a hiphop point")
+                sHiphopPoints(previ3 => previ3+1)
+            }
+            else if (currentGen[0].name === country[0].name)
+            {
+                setCountryPoints(prev4 => prev4+1)
+                console.log("Got a country point")
+                sCountryPoints(previ4 => previ4+1)
+            }
         }
+
+        if (totalQuestionsAsked > 8)
+        {
+            
+            
+            history.push({pathname: "/result", state: {pointsMade: tRightQuestions, totalPoints: totalQuestionsAsked+1}})
+            
+           //this.props.history.push("/result")
+        }
+
         rerollq()
     }
 
@@ -90,28 +149,20 @@ const Question_Page = () => {
         var correctAnswer = getRandomInt(4)
         setButtonVal(correctAnswer)
 
-        console.log("THIS IS A TESTTTT")
-        console.log(pop)
-        console.log("HEREEEE")
 
         var genres = [pop, rock, hiphop, country]
         shuffleArray(genres)
 
         var buttons = [cbut1, cbut2, cbut3, cbut4]
 
-        console.log(genres)
-        console.log("This is the question!")
-        console.log(question)
         for (let i = 0; i < 4; i++){
-            console.log(pop)
+            
             var randNum = getRandomInt(50)
             const {name, artist, image} = genres[i][randNum]
             const artistname = artist.name
             const imageURL = image[2]["#text"]
         
-            //console.log("THIS IS A TESTTTT")
-            //console.log(pop)
-            //console.log("HEREEEE")
+            
 
 
             
@@ -125,6 +176,7 @@ const Question_Page = () => {
             if (correctAnswer === i)
             {
                 changeq(artistname)
+                genUpdate(genres[i])
             }
         
     }
@@ -138,9 +190,6 @@ const Question_Page = () => {
     }
     
     useEffect(() => {
-        //if reroll {
-        //    reroll_answers()
-        //}
         getGenreSongList("pop").then(
             items => {
                 setPop(items)

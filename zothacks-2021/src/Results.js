@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Results.css';
+import { useLocation } from 'react-router-dom';
 
 const Results = (props) => {
     /* The results page. Takes in the argument props, which is an object
@@ -31,32 +32,14 @@ const Results = (props) => {
       songName2: "Song 2"
     });
 
+    let location = useLocation();
+
     // JSX object
     return (
         <nav class="results">
             <div className="resultsTitle">
-                <h1>You got <strong>{ finalScores.mainScore }/10.</strong> Congratulations!</h1>
+                <h1>You got <strong>{ location.state.pointsMade }/{location.state.totalPoints}.</strong> Congratulations!</h1>
                 <a href="/question" className="restart">PLAY AGAIN</a>
-            </div>
-            <div className="resultsInfoRow">
-                <div className="resultsInfoColumn">
-                    <p>
-                        You got { finalScores.songScore1 }/2 for { finalScores.genre1 }<br />
-                        You've definitely mastered it!<br />
-                        Here's a song that we recommend for you:
-                    </p>
-                    <img src={ finalScores.albumArt1 } class="resultsAlbumCover" alt=""></img>
-                    <p>{ finalScores.artistName1 } - { finalScores.songName1 }</p>
-                </div>
-                <div className="resultsInfoColumn">
-                    <p>
-                        You got { finalScores.songScore2 }/2 for { finalScores.genre2 }<br />
-                        Want to learn more about it?<br />
-                        Here's a song that we recommend for you:
-                    </p>
-                    <img src={ finalScores.albumArt2 } className="resultsAlbumCover" alt=""></img>
-                    <p>{ finalScores.artistName2 } - { finalScores.songName2 }</p>
-                </div>
             </div>
         </nav>
     );

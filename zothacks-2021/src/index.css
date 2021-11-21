@@ -8,15 +8,13 @@ code {
 .gametitle{
   position: auto;
   width: 100%;
-  height: auto;
-  left: calc(50% - 1182px/2);
-  top: calc(50% - 308px/2 - 193px);
+  max-height: auto;
 
   font-family: Menlo;
   font-style: normal;
   font-weight: bold;
-  font-size: 192px;
-  line-height: 225px;
+  font-size: 104px;
+  line-height: auto;
   text-align: center;
 
   color: #DDDDDD;
@@ -44,10 +42,29 @@ code {
 .gamestart:hover {
   background-color: #AA69FC;
   color: black;
+  transition: background-color .5s;
+  transition: color .25s;
 }
 
 .buttonbox{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#Prompt {
+  font-size: xxx-large;
+  text-align-last: center;
+  color: white;
+}
+
+.answers {
+  padding-top: 8%;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto auto auto;
+}
+
+figcaption {
+  font-size: x-large;
 }
